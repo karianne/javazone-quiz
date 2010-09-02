@@ -49,6 +49,4 @@ object Client extends Application {
     println("Du fikk " + game.finalScore + " rette svar av "
             + game.numOfQuestions + " mulige.")
   }
-
-
 }

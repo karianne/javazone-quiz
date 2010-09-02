@@ -22,19 +22,6 @@ case class Question(text : String, correctAnswer : (String, String), wrongAnswer
   }
 
   def isCorrect(answer : String) = answer == correctAnswer._1
-}
-
-/*
-case class Question(text: String, correctAnswer: Answer, wrongAnswers: List[Answer]) {
-
-  override def equals(other: Any) = {
-    other match {
-      case Question(x, _, _) => x == this.text
-      case _ => false
-    }
-  }
-
-  override def hashCode = text.length
 
   override def toString = {
     val builder = new StringBuilder
@@ -43,13 +30,12 @@ case class Question(text: String, correctAnswer: Answer, wrongAnswers: List[Answ
     builder.append("\n")
     answers foreach {
       answer =>
-        builder.append(answer.id)
+        builder.append(answer._1)
         builder.append(": ")
-        builder.append(answer.text)
+        builder.append(answer._2)
         builder.append("    ")
     }
 
     builder.toString
   }
 }
-*/
