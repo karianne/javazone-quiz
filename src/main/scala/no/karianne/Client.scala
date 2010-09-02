@@ -8,7 +8,7 @@ object Client extends Application {
 
     val numberOfQuestions = readNumberOfQuestions
 
-    val game = new QuizGame(numOfQuestions)
+    val game = new QuizGame(numberOfQuestions)
 
     playGameUntilFinished(game)
 
@@ -21,7 +21,6 @@ object Client extends Application {
       println(question)
       var answer = ""
       do {
-        println(question)
         answer = readLine
       } while (!(game isValid answer))
       game.answer(answer)
@@ -42,6 +41,7 @@ object Client extends Application {
     do {
       numOfQuestions = readInt
     } while (numOfQuestions < 0)
+    numOfQuestions
   }
 
   def printGameIsFinished(game: QuizGame): Unit = {
