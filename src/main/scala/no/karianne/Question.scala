@@ -1,6 +1,6 @@
 package no.karianne
 
-case class Question(text : String, rightAnswer : (String, String), wrongAnswers : Map[String, String]) {
+case class Question(text : String, correctAnswer : (String, String), wrongAnswers : Map[String, String]) {
 
   override def equals(other : Any) = {
     other match {
@@ -9,7 +9,7 @@ case class Question(text : String, rightAnswer : (String, String), wrongAnswers 
     }
   }
 
-  def answers = wrongAnswers + rightAnswer
+  def answers = wrongAnswers + correctAnswer
 
   def isValid(answer : String) = {
 
@@ -21,11 +21,11 @@ case class Question(text : String, rightAnswer : (String, String), wrongAnswers 
     // Enklere: answers.exists(_._1 == answer)
   }
 
-  def isRight(answer : String) = answer == rightAnswer._1
+  def isCorrect(answer : String) = answer == correctAnswer._1
 }
 
 /*
-case class Question(text: String, rightAnswer: Answer, wrongAnswers: List[Answer]) {
+case class Question(text: String, correctAnswer: Answer, wrongAnswers: List[Answer]) {
 
   override def equals(other: Any) = {
     other match {

@@ -33,7 +33,7 @@ class QuizGameTest extends JUnitSuite {
   def canOnlyAnswerValidAnswers {
     val question = game.nextQuestion
     assertFalse(game.isValid("Hest"))
-    assertTrue(game.isValid(question.rightAnswer._1))
+    assertTrue(game.isValid(question.correctAnswer._1))
 
     question.wrongAnswers.keys.foreach(answer =>
       assertTrue(game.isValid(answer))
@@ -47,7 +47,7 @@ class QuizGameTest extends JUnitSuite {
       game.answer(question.wrongAnswers.head._1)
     }
 
-    assertEquals(0, game.finalPoints)
+    assertEquals(0, game.finalScore)
   }
 
   @Test
@@ -55,10 +55,10 @@ class QuizGameTest extends JUnitSuite {
 
     loop (1, numOfQuestions) {
       val question = game.nextQuestion
-      game.answer(question.rightAnswer._1)
+      game.answer(question.correctAnswer._1)
     }
 
-    assertEquals(numOfQuestions, game.finalPoints)
+    assertEquals(numOfQuestions, game.finalScore)
   }
 
   def loop(start : Int, stop : Int)( codeBlock: => Unit) {
@@ -100,7 +100,7 @@ class QuizGameTest extends JUnitSuite {
     assertFalse(game.isValid("Huzza"))
     assertFalse(game.isValid("90000"))
 
-    assertTrue(game.isValid(question.rightAnswer.id))
+    assertTrue(game.isValid(question.correctAnswer.id))
     question.wrongAnswers foreach {answer => assertTrue(game.isValid(answer.id))}
   }
 
@@ -108,10 +108,10 @@ class QuizGameTest extends JUnitSuite {
   def allRightAnswersGivesFullScore {
     for (i <- 1 to numOfQuestions) {
       val q = game.nextQuestion
-      game.answer(q.rightAnswer.id)
+      game.answer(q.correctAnswer.id)
     }
 
-    assertEquals(numOfQuestions, game.finalPoints)
+    assertEquals(numOfQuestions, game.finalScore)
   }
 
   //@Test
@@ -122,7 +122,7 @@ class QuizGameTest extends JUnitSuite {
         game.answer(q.wrongAnswers(0).id)
     }
 
-    assertEquals(0, game.finalPoints)
+    assertEquals(0, game.finalScore)
   }
 
   //@Test

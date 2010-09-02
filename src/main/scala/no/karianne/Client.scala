@@ -46,7 +46,7 @@ object Client extends Application {
 
   def printGameIsFinished(game: QuizGame): Unit = {
     println("Spillet er ferdig!")
-    println("Du fikk " + game.finalPoints + " rette svar av "
+    println("Du fikk " + game.finalScore + " rette svar av "
             + game.numOfQuestions + " mulige.")
   }
 

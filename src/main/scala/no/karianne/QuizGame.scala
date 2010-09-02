@@ -24,9 +24,9 @@ class QuizGame(val numOfQuestions: Int) {
 
   def isValid(answer: String) = currentQuestion.isValid(answer)
 
-  def answer(answer: String) = if(currentQuestion isRight answer) currentScore += 1
+  def answer(answer: String) = if(currentQuestion isCorrect answer) currentScore += 1
 
-  def finalPoints = currentScore
+  def finalScore = currentScore
 
 }
 
@@ -79,7 +79,7 @@ class QuizGame(val numOfQuestions: Int) {
     currentQuestion
   }
 
-  def finalPoints = currentScore
+  def finalScore = currentScore
 
   def isValid(answer: String) = {
     currentQuestion.answers.exists(_.id == answer)
@@ -87,7 +87,7 @@ class QuizGame(val numOfQuestions: Int) {
 
   def answer(answer: String) {
     if (!isValid(answer)) throw new IllegalArgumentException
-    if (currentQuestion.rightAnswer.id == answer) {
+    if (currentQuestion.correctAnswer.id == answer) {
       currentScore += 1
     }
   }
