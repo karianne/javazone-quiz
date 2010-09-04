@@ -1,31 +1,15 @@
 package no.karianne
 
-class QuizGame(val numOfQuestions: Int) {
-  val allQuestions = List(
-    Question("Hvem er verdens største hest?", ("1", "Arne"), Map("2" -> "Bjarne", "3" -> "Kåre")),
-    Question("Hvem ble kalt 'landsmoderen'?", ("1", "Gro"), Map("2" -> "Siv", "3" -> "Anne Grethe")),
-    Question("Hva er en ninja?", ("1", "All of the above"), Map("2" -> "Totally awesome", "3" -> "Et pattedyr")),
-    Question("Hvem er ninjaens hovedfiende?", ("1", "Pirater"), Map("2" -> "FrP-ere", "3" -> "Edderkopper"))
-    )
+class QuizGame(val numOfQuestions : Int){
 
-  private var currentQuestionNumber = 0
-  private var currentScore = 0
+  def isNotFinished = false
 
-  def isNotFinished = !isFinished
+  def nextQuestion = ""
 
-  def isFinished = currentQuestionNumber == numOfQuestions
+  def isValid(answer : String) = true
 
-  def currentQuestion: Question = allQuestions(currentQuestionNumber)
+  def answer(answer : String) = {}
 
-  def nextQuestion = {
-    currentQuestionNumber += 1
-    currentQuestion
-  }
-
-  def isValid(answer: String) = currentQuestion.isValid(answer)
-
-  def answer(answer: String) = if(currentQuestion isCorrect answer) currentScore += 1
-
-  def finalScore = currentScore
+  def finalScore = 0
 
 }
