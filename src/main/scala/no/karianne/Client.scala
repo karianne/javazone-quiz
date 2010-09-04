@@ -4,30 +4,28 @@ object Client extends Application {
   playGame
 
   def playGame() {
-    readName
+    welcome
     val numberOfQuestions = readNumberOfQuestions
     val game = new QuizGame(numberOfQuestions)
     playGameUntilFinished(game)
-    printGameIsFinished(game)
+    printFinalScore(game)
   }
 
   def playGameUntilFinished(game: QuizGame) {
-    while (game.isNotFinished) {
+    while (game isNotFinished) {
       val question = game.nextQuestion
       println(question)
       var answer = ""
       do {
         answer = readLine
-      } while (!game.isValid(answer))
+      } while (!(game isValid answer))
       game.answer(answer)
       println("-------------------------------------")
     }
   }
 
-  def readName = {
+  def welcome = {
     println("Velkommen til quiz!")
-    print("Ditt navn: ")
-    val name = readLine
   }
 
   def readNumberOfQuestions = {
@@ -39,7 +37,7 @@ object Client extends Application {
     numOfQuestions
   }
 
-  def printGameIsFinished(game: QuizGame) {
+  def printFinalScore(game: QuizGame) {
     println("Spillet er ferdig!")
     println("Du fikk " + game.finalScore + " rette svar av "
             + game.numOfQuestions + " mulige.")
