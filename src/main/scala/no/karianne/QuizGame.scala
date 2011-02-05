@@ -2,14 +2,31 @@ package no.karianne
 
 class QuizGame(val numOfQuestions : Int){
 
-  def isNotFinished = false
+  private val allQuestions = QuestionFactory.questions
+  private var currentQuestionNumber = 0
+  private var currentScore = 0
 
-  def nextQuestion = ""
+  def isNotFinished = !isFinished
 
-  def isValid(answer : String) = true
+  def isFinished = currentQuestionNumber == numOfQuestions
 
-  def answer(answer : String) = {}
+  def currentQuestion = {
+    allQuestions(currentQuestionNumber - 1)
+  }
 
-  def finalScore = 0
+  def nextQuestion = {
+    currentQuestionNumber += 1
+    currentQuestion
+  }
+
+  def isValid(answer : String) = {
+    currentQuestion.isValid(answer)
+  }
+
+  def answer(answer : String) = {
+    if(currentQuestion.isCorrect(answer)) currentScore += 1
+  }
+
+  def finalScore = currentScore
 
 }

@@ -12,7 +12,7 @@ object Client extends Application {
   }
 
   def playGameUntilFinished(game: QuizGame) {
-    while (game.isNotFinished) {
+    while (game isNotFinished) {
       val question = game.nextQuestion
       println(question)
       var answer = ""
