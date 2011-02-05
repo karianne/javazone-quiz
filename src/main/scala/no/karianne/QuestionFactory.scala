@@ -1,7 +1,7 @@
 package no.karianne
 
 object QuestionFactory {
-
+/*
 
 
 
@@ -50,5 +50,5 @@ object QuestionFactory {
 
 
 
-
+*/
 }
