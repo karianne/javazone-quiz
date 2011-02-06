@@ -1,7 +1,7 @@
 package no.karianne
 
 object QuestionFactory {
-/*
+
 
 
 
@@ -25,7 +25,7 @@ object QuestionFactory {
         Map("1" -> "Learn Ruby instead", "2" -> "Wait until tomorrow")),
       Question("If it's tempting to return null from a method, what should the method's return type be?",
         ("3" -> "Option"),
-        Map("1" -> "Any", "2" -> "Nothing")),
+        Map("1" -> "Any", "2" -> "None")),
       Question("Have ninjas ever worn tights?",
         ("3" -> "Definitely not"),
         Map("1" -> "Constantly", "2" -> "Only in the 80s"))
@@ -47,5 +47,5 @@ object QuestionFactory {
 
 
 
-*/
+
 }
