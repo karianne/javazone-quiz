@@ -25,11 +25,11 @@ object Client extends Application {
   }
 
   def welcome = {
-    println("Velkommen til quiz!")
+    println("Welcome to the quiz!")
   }
 
   def readNumberOfQuestions = {
-    print("Antall spørsmål: ")
+    print("Number of questions: ")
     var numOfQuestions = -1
     do {
       numOfQuestions = readInt
@@ -38,8 +38,8 @@ object Client extends Application {
   }
 
   def printFinalScore(game: QuizGame) {
-    println("Spillet er ferdig!")
-    println("Du fikk " + game.finalScore + " rette svar av "
-            + game.numOfQuestions + " mulige.")
+    println("Game over!")
+    println("You had " + game.finalScore + " of "
+            + game.numOfQuestions + " correct answers.")
   }
 }

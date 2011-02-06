@@ -17,21 +17,18 @@ object QuestionFactory {
 
   def questions = {
     List(
-      Question("Dersom du uventet får Unit som returtype, hva har du glemt da?",
-        ("3", "=-tegn før metodekroppen"),
-        Map("1" -> "Å definere returtypen", "2" -> "Å skrive punktum")),
-      Question("Dersom du får en shitload med skikkelig sære feil, hva bør du gjøre da?",
-        ("3" -> "Bruke punktum og parenteser i metodekall"),
-        Map("1" -> "Lære deg Ruby i stedet", "2" -> "Vente til dagen etter")),
-      Question("""Hva er i veien dersom du får feilmeldingen "value question is not defined"?""",
-        ("3" -> "Du har glemt å skrive val eller var foran variabeldeklarasjonen"),
-        Map("1" -> "Du har glemt å definere variabelen", "2" -> "Kompilatoren har PMS")),
-      Question("Dersom det føles fristende å returnere null fra en metode, hva bør returverdien til metoden være da?",
+      Question("If you get Unit as a return type without expecting it, what did you likely forget?",
+        ("3", "Equals sign (=) before the method body"),
+        Map("1" -> "Defining the return type", "2" -> "Dots and parenthesis")),
+      Question("If you get a bunch of weird errors, what should you do?",
+        ("3" -> "Use dots and parenthesis in method calls"),
+        Map("1" -> "Learn Ruby instead", "2" -> "Wait until tomorrow")),
+      Question("If it's tempting to return null from a method, what should the method's return type be?",
         ("3" -> "Option"),
         Map("1" -> "Any", "2" -> "Nothing")),
-      Question("Har ninjaer noensinne hatt på seg stillongs??",
-        ("3" -> "Definitivt ikke"),
-        Map("1" -> "Hele tiden", "2" -> "Bare på tidlig 1800-tall"))
+      Question("Have ninjas ever worn tights?",
+        ("3" -> "Definitely not"),
+        Map("1" -> "Constantly", "2" -> "Only in the 80s"))
       )
   }
 

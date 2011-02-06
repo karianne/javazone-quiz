@@ -4,8 +4,6 @@ class QuizGame(val numOfQuestions : Int){
 
   def isNotFinished = false
 
-  def currentQuestion = ""
-
   def nextQuestion = {}
 
   def isValid(answer : String) = true
