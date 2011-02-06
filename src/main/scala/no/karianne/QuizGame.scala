@@ -2,7 +2,7 @@ package no.karianne
 
 class QuizGame(val numOfQuestions : Int){
 
-  def isNotFinished = false
+  def isFinished = true
 
   def nextQuestion = {}
 
